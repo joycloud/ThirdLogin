@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+    var email = ViewBag.email;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ThirdLoginView</title>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js"></script>
+    @*<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v8.0&appId=1360450120791953&autoLogAppEvents=1" nonce="XFOOreuj"></script>*@
+
+</head>
+<body>
+    <div id="Login_Account">@email</div>
+
+    <div>
+        <button class="btn btn-turquoise btn-line" type="button" onclick="LineAuth()">Line 登入</button>
+        <p>
+    </div>
+    <div>
+        官方SDK(LINE瀏覽器失效)
+        <button type="button" class="btn btn-lg fb" onclick="FBLogin_sdk()"><i class="fa fa-facebook-official"></i>FB 登入</button>
+        <p>
+            手動呼叫，不使用SDK(相容各種瀏覽器)
+        <p>
+            <button type="button" class="btn btn-lg fb" onclick="FBLogin_nosdk()">手動呼叫FB登入</button>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+</body>
+</html>
